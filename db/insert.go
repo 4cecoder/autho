@@ -3,7 +3,7 @@ package db
 // db/insert.go
 
 import (
-	"auth/models"
+	"github.com/bytecats/auth/models"
 )
 
 // InsertUser inserts a new user into the database

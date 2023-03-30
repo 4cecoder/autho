@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"auth/db"
-	"auth/models"
 	"encoding/json"
+	"github.com/bytecats/auth/db"
+	"github.com/bytecats/auth/models"
 	"net/http"
 )
 

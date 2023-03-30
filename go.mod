@@ -1,4 +1,4 @@
-module github.com/bytecats/auth
+module github.com/byte-cats/autho
 
 go 1.20
 
