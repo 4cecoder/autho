@@ -1,7 +1,7 @@
 package routing
 
 import (
-	"github.com/bytecats/auth/handlers"
+	"github.com/byte-cats/autho/handlers"
 	"github.com/gorilla/mux"
 )
 

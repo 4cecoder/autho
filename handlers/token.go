@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"auth/models"
+	"github.com/byte-cats/autho/models"
 	"github.com/dgrijalva/jwt-go"
 	"os"
 	"time"

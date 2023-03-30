@@ -4,7 +4,7 @@ package db
 import (
 	"database/sql"
 	"fmt"
-	"github.com/bytecats/auth/models"
+	"github.com/byte-cats/autho/models"
 )
 
 // GetUserByID retrieves a user with the given ID from the database

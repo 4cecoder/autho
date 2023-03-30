@@ -3,9 +3,9 @@ package handlers
 // handlers/register.go
 
 import (
-	"auth/db"
-	"auth/models"
 	"encoding/json"
+	"github.com/byte-cats/autho/db"
+	"github.com/byte-cats/autho/models"
 	"net/http"
 )
 

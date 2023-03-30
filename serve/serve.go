@@ -9,9 +9,7 @@ import (
 )
 
 func Serve(r *mux.Router) {
-	// get godot env variable api port and set it to port variable
 	godotenv.Load(".env")
 	port := os.Getenv("API_PORT")
 	log.Fatal(http.ListenAndServe(":"+port, nil))
-
 }

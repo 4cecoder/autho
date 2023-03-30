@@ -2,8 +2,8 @@ package main
 
 import (
 	"github.com/byte-cats/autho/db"
-	"github.com/bytecats/auth/routing"
-	"github.com/bytecats/auth/serve"
+	"github.com/byte-cats/autho/routing"
+	"github.com/byte-cats/autho/serve"
 )
 
 func main() {

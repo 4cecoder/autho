@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"encoding/json"
-	"github.com/bytecats/auth/db"
-	"github.com/bytecats/auth/models"
+	"github.com/byte-cats/autho/db"
+	"github.com/byte-cats/autho/models"
 	"net/http"
 )
 
@@ -21,7 +21,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Check if the user with the given email and password exists in the database
-	user, err := db.GetUserByEmailAndPassword(creds.Email, creds.Password)
+	user, err := db.GetUserByEmailAndPassword(creds.EmailAddress, creds.Password)
 	if err != nil {
 		w.WriteHeader(http.StatusUnauthorized)
 		json.NewEncoder(w).Encode(Response{Message: "Invalid credentials"})
