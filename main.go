@@ -8,6 +8,7 @@ import (
 
 func main() {
 	defer db.DB.Close()
+	db.InitDB()
 
 	serve.Serve(routing.InitRoutes())
 }
