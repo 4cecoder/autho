@@ -20,6 +20,11 @@ type Credentials struct {
 	EmailAddress string `json:"email_address" validate:"required,email"`
 	Password     string `json:"password" validate:"required"`
 }
+type UserProfile struct {
+	ID    uint   `json:"id"`
+	Name  string `json:"name"`
+	Email string `json:"email"`
+}
 
 // HashPassword hashes a password using bcrypt
 func HashPassword(password string) (string, error) {
