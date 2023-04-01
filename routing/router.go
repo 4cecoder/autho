@@ -17,5 +17,8 @@ func InitRoutes() *mux.Router {
 	// Login endpoint
 	r.HandleFunc("/login", handlers.Login).Methods("POST")
 
+	// Get all users endpoint
+	r.HandleFunc("/all", handlers.GetUsers).Methods("GET")
+
 	return r
 }

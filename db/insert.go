@@ -8,7 +8,6 @@ import (
 
 // InsertUser inserts a new user into the database
 func InsertUser(user models.User) error {
-	// Prepare the INSERT statement
 	stmt, err := DB.Prepare("INSERT INTO users (name, email_address, password) VALUES (?, ?, ?)")
 	if err != nil {
 		return err

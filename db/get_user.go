@@ -78,3 +78,33 @@ func GetUserByEmailAndPassword(email, password string) (models.User, error) {
 	return user, nil
 
 }
+
+// get all users and return them as a slice of User structs
+func GetAllUsers() ([]models.User, error) {
+	// Prepare the SELECT statement
+	stmt, err := DB.Prepare("SELECT id, name, email_address, password FROM users")
+	if err != nil {
+		return nil, err
+	}
+	defer stmt.Close()
+
+	// Execute the SELECT statement
+	rows, err := stmt.Query()
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	// Scan the results into a slice of User structs
+	var users []models.User
+	for rows.Next() {
+		var user models.User
+		err = rows.Scan(&user.ID, &user.Name, &user.EmailAddress, &user.Password)
+		if err != nil {
+			return nil, err
+		}
+		users = append(users, user)
+	}
+
+	return users, nil
+}
