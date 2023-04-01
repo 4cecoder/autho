@@ -1,10 +1,7 @@
 package db
 
-import "database/sql"
-
-//db/db.go
-
 import (
+	"database/sql"
 	"fmt"
 	"log"
 	"os"
@@ -12,6 +9,8 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/joho/godotenv"
 )
+
+// db/db.go
 
 var DB *sql.DB
 
