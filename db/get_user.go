@@ -79,7 +79,7 @@ func GetUserByEmailAndPassword(email, password string) (models.User, error) {
 
 }
 
-// get all users and return them as a slice of User structs
+// GetAllUsers get all users and return them as a slice of User structs
 func GetAllUsers() ([]models.User, error) {
 	// Prepare the SELECT statement
 	stmt, err := DB.Prepare("SELECT id, name, email_address, password FROM users")
