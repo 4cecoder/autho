@@ -1,13 +1,14 @@
-version: "3.9"
+version: "3.3"
 services:
   auth_service:
     build:
       context: ../
-      dockerfile: ../Dockerfile
-      target: dev
+      dockerfile: deploy/Dockerfile
     container_name: ${SERVICE_NAME}
     ports:
       - ${EXPORTED_APP_PORT}:${APP_PORT}
+    env_file:
+      - .env
     environment:
       - APP_PORT=${APP_PORT}
       - MYSQL_HOST=mysql
