@@ -8,13 +8,13 @@ RUN apk update && apk add --no-cache git ca-certificates tzdata && update-ca-cer
 WORKDIR /app
 
 # Copy go.mod and go.sum files
-COPY go.mod go.sum ./
+COPY ../go.mod go.sum ./
 
 # Download dependencies
 RUN go mod download
 
 # Copy the rest of the source code
-COPY . .
+COPY .. .
 
 # Build the application
 RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-w -s" -o autho
@@ -25,7 +25,7 @@ FROM scratch
 # Copy necessary files from builder stage
 COPY --from=builder /app/autho /app/autho
 COPY --from=builder /usr/share/zoneinfo /usr/share/zoneinfo
-COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
+#COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 # Set environment variables
 ENV APP_PORT=8080

@@ -3,11 +3,13 @@ services:
   auth_service:
     build:
       context: ../
-      dockerfile: ../Dockerfile
+      dockerfile: deploy/Dockerfile
       target: dev
     container_name: ${SERVICE_NAME}
     ports:
       - ${EXPORTED_APP_PORT}:${APP_PORT}
+    env_file:
+      - .env
     environment:
       - APP_PORT=${APP_PORT}
       - MYSQL_HOST=mysql
